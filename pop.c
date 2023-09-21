@@ -1,4 +1,10 @@
 #include "monty.h"
+/**
+ * pint - The opcode pint prints the value at the top of the stack
+ * @stack: a node to the first element in the linked list (stack_t)
+ * @line_number: line number of the opCode that is being executed
+ *
+ */
 void pop_error(unsigned int line_number);
 
 void pop(stack_t **h, unsigned int line_number)

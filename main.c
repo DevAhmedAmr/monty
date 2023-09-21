@@ -2,13 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 #include "monty.h"
+/**
+ * @brief
+ * @note
+ * @param  argc:
+ * @param  **argv:
+ * @retval
+ */
 
 int main(int argc, char **argv)
 {
 	int line_number = 1;
 	vars_aircraft.stack = NULL;
 
-	if (argc < 2 || argc > 3)
+	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
