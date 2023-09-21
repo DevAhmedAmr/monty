@@ -35,14 +35,6 @@ int is_integer(char *str)
 
 int unknown_instruction_err(int line_number, char *optcode)
 {
-	fprintf(stderr, "L%i:, unknown instruction %s\n", line_number, optcode);
-
-	if (vars_aircraft.stack != NULL)
-		free_stack_t(vars_aircraft.stack);
-
-	free(vars_aircraft.input);
-	free_grid(vars_aircraft.input_splitted);
-	fclose(vars_aircraft.file);
 
 	exit(EXIT_FAILURE);
 }
