@@ -6,9 +6,13 @@ void swap(stack_t **h, unsigned int line_number)
 {
 	int tmp;
 	stack_t *curr;
-
-	if (*h == NULL || !is_len_bigger_than_2(*h))
+	/**/
+	if (*h == NULL || (*h)->next == NULL)
+	{
+		/*printf("x = %i\n", x);*/
+		/* printf("------ %i\n", curr->next->n);*/
 		swap_error(line_number);
+	}
 	curr = *h;
 	tmp = curr->n;
 	curr->n = curr->next->n;
@@ -39,12 +43,13 @@ int is_len_bigger_than_2(stack_t *h)
 
 	curr = h;
 
-	while (curr != NULL)
+	while (curr != NULL && i >= 2)
 	{
-		if (i >= 2)
-			return (1);
+
+		return (1);
 
 		i++;
+
 		curr = curr->next;
 	}
 	return (0);
