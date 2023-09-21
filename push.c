@@ -26,6 +26,11 @@ int is_integer(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 	{
+		int in_negative = i == 0 && str[i] == '-';
+
+		if (in_negative)
+			continue;
+
 		if ((int)str[i] > 57 || (int)str[i] < 48)
 			return 0;
 	}
