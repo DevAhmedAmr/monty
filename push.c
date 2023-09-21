@@ -3,7 +3,7 @@
 int is_integer(char *str);
 int push_usage_err(int line_number);
 int unknown_instruction_err(int line_number, char *optcode);
-
+void stack_t_malloc_fail(stack_t *node);
 void push(stack_t **stack, unsigned int line_number)
 {
 	int is_arr_empty = double_arr_len(vars_aircraft.input_splitted) < 2;
@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 		push_usage_err(line_number);
 
-	add_at_beginning_stack_t(stack, element);
+	stack_t_malloc_fail(add_at_beginning_stack_t(stack, element));
 }
 
 int is_integer(char *str)
@@ -58,4 +58,17 @@ int push_usage_err(int line_number)
 	fclose(vars_aircraft.file);
 
 	exit(EXIT_FAILURE);
+}
+
+void stack_t_malloc_fail(stack_t *node)
+{
+	if (node == NULL)
+	{
+		fprintf(stdout, "Error: malloc failed\n");
+		free(vars_aircraft.stack);
+		free(vars_aircraft.input);
+		free_grid(vars_aircraft.input_splitted);
+		fclose(vars_aircraft.file);
+		exit(EXIT_FAILURE);
+	}
 }

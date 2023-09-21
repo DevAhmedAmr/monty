@@ -6,6 +6,15 @@ char **string_toList(char *input)
 	int i;
 
 	if (input_splitted == NULL)
+	{
+		fprintf(stdout, "Error: malloc failed\n");
+		fclose(vars_aircraft.file);
+		free(vars_aircraft.input);
+		free(input_splitted);
+		exit(EXIT_FAILURE);
+	}
+
+	if (input_splitted == NULL)
 		return NULL;
 
 	for (i = 0; tmp != NULL; i++)

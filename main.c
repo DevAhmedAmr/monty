@@ -15,11 +15,14 @@ int main(int argc, char **argv)
 	}
 
 	vars_aircraft.input = malloc(250 * sizeof(char));
+	malloc_failur(vars_aircraft.input);
+
 	vars_aircraft.file = fopen(argv[1], "r");
 
 	if (vars_aircraft.file == NULL)
 	{
-		fprintf(stdout, "file can't be opened\n");
+		fprintf(stdout, "Error: Can't open file %s\n", argv[1]);
+		free(vars_aircraft.input);
 		exit(EXIT_FAILURE);
 	}
 

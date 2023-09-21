@@ -71,4 +71,12 @@ void compare_fun(char **input_splitted, const int line_number, stack_t **stack);
 int double_arr_len(char **arr);
 void push(stack_t **stack, unsigned int line_number);
 
+#define malloc_failur(allocated_var)                   \
+	{                                                  \
+		if (allocated_var == NULL)                     \
+		{                                              \
+			fprintf(stdout, "Error: malloc failed\n"); \
+			exit(EXIT_FAILURE);                        \
+		}                                              \
+	}
 #endif
