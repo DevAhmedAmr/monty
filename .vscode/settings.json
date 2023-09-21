@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"lists.h": "c",
+		"monty.h": "c",
+		"stdlib.h": "c"
+	}
+}
