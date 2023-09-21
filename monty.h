@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#define UNUSED(x) (void)(x)
+
 /*char **op_code_arr;*/
 
 /**
@@ -57,9 +59,9 @@ typedef struct aircraft_s
 
 aircraft_s vars_aircraft;
 /*extern aircraft_s vars_aircraft;*/
-
+int unknown_instruction_err(int line_number, char *optcode);
 void push(stack_t **stack, unsigned int line_number);
-int errors_handling(int line_number, char *optcode);
+int errors_handling(stack_t **stack, unsigned int line_number);
 void pall(stack_t **input, unsigned int line_number);
 int free_grid(char **arr);
 char **string_toList(char *input);
@@ -67,4 +69,6 @@ void print_grid(char **input_toList);
 /*extern char **op_code_arr;*/
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack);
 int double_arr_len(char **arr);
+void push(stack_t **stack, unsigned int line_number);
+
 #endif

@@ -52,7 +52,11 @@ void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)
 		{
 			functions[i].f(stack, line_number);
-			break;
+			return;
 		}
+	}
+	if (input_splitted[0] != NULL)
+	{
+		unknown_instruction_err(line_number, input_splitted[0]);
 	}
 }
