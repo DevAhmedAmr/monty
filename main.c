@@ -42,14 +42,14 @@ int main(int argc, char **argv)
 
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 {
-	instruction_t functions[] = {{"push", push}, {"pall", pall}};
+	instruction_t functions[] = {{"push", push}, {"pall", pall}, {"pint", pint}};
 	int i;
 	if (double_arr_len(input_splitted) == 0)
 	{
 		return;
 	}
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 
 		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)

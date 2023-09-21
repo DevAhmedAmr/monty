@@ -33,6 +33,7 @@ stack_t *insert_stack_t_at_index(stack_t **h, unsigned int idx, int n);
 stack_t *add_head(stack_t **head, int n);
 int delete_add_stack_t_at_index(stack_t **head, unsigned int index);
 int double_arr_len(char **arr);
+void pint(stack_t **h, unsigned int line_number);
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
