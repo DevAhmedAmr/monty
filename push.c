@@ -37,9 +37,6 @@ int unknown_instruction_err(int line_number, char *optcode)
 {
 	fprintf(stderr, "L%i: unknown instruction %s\n", line_number, optcode);
 
-	if (vars_aircraft.stack != NULL)
-		free_stack_t(vars_aircraft.stack);
-
 	exit(EXIT_FAILURE);
 }
 
