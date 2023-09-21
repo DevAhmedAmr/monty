@@ -42,13 +42,18 @@ int main(int argc, char **argv)
 
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 {
-	instruction_t functions[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}, {"swap", swap}};
+	instruction_t functions[] = {{"push", push},
+								 {"pall", pall},
+								 {"pint", pint},
+								 {"pop", pop},
+								 {"swap", swap},
+								 {"add", add}};
 	int i;
 
 	if (double_arr_len(input_splitted) == 0)
 		return;
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 6; i++)
 	{
 
 		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)

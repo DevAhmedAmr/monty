@@ -73,6 +73,7 @@ int double_arr_len(char **arr);
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **h, unsigned int line_number);
 void swap(stack_t **h, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 #define malloc_failur(allocated_var)                   \
 	{                                                  \
 		if (allocated_var == NULL)                     \
