@@ -49,10 +49,7 @@ void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 	for (i = 0; i < 2; i++)
 	{
 
-		int str_len = strlen(input_splitted[0]) - 1;
-
-		if (strcmp(functions[i].opcode, input_splitted[0]) == 0 ||
-			strncmp(functions[i].opcode, input_splitted[0], str_len) == 0)
+		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)
 		{
 			functions[i].f(stack, line_number);
 			break;
