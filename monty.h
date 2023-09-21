@@ -31,7 +31,7 @@ stack_t *get_stack_t_at_index(stack_t *head, unsigned int index);
 int sum_stack_t(stack_t *head);
 stack_t *insert_stack_t_at_index(stack_t **h, unsigned int idx, int n);
 stack_t *add_head(stack_t **head, int n);
-int delete_add_stack_t_at_index(stack_t **head, unsigned int index);
+int delete_node_stack_t_at_index(stack_t **head, unsigned int index);
 int double_arr_len(char **arr);
 void pint(stack_t **h, unsigned int line_number);
 /**
@@ -71,7 +71,7 @@ void print_grid(char **input_toList);
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack);
 int double_arr_len(char **arr);
 void push(stack_t **stack, unsigned int line_number);
-
+void pop(stack_t **h, unsigned int line_number);
 #define malloc_failur(allocated_var)                   \
 	{                                                  \
 		if (allocated_var == NULL)                     \

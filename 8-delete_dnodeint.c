@@ -7,7 +7,7 @@
  *
  * Return: Returns: 1 if it succeeded, -1 if it failed
  */
-int delete_add_stack_t_at_index(stack_t **head, unsigned int index)
+int delete_node_stack_t_at_index(stack_t **head, unsigned int index)
 {
 	stack_t *curr, *tmp;
 	unsigned int i = 0;
