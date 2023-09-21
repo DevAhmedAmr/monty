@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (is_integer(vars_aircraft.input_splitted[1]) == 1)
 		element = atoi(vars_aircraft.input_splitted[1]);
 	else
-		unknown_instruction_err(line_number, "push");
+		push_usage_err(line_number);
 
 	add_at_beginning_stack_t(stack, element);
 }
