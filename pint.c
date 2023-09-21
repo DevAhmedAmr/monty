@@ -1,11 +1,12 @@
 #include "monty.h"
+int pint_error(int line_number);
+
 void pint(stack_t **h, unsigned int line_number)
 {
 	UNUSED(line_number);
-	if (h = NULL)
-	{
+
+	if (h == NULL)
 		pint_error(line_number);
-	}
 
 	printf("%i\n", (*h)->n);
 }
