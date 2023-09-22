@@ -67,13 +67,14 @@ void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 		{"sub", sub},
 		{"div", divide},
 		{"mul", mul},
-		{"mod", mod}};
+		{"mod", mod},
+		{"pchar", pchar}};
 	int i;
 
 	if (double_arr_len(input_splitted) == 0 || input_splitted[0][0] == '#')
 		return;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 12; i++)
 	{
 
 		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)
