@@ -56,19 +56,18 @@ int main(int argc, char **argv)
  */
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 {
-	instruction_t functions[] =
-		{
-			{"push", push},
-			{"pall", pall},
-			{"pint", pint},
-			{"pop", pop},
-			{"swap", swap},
-			{"add", add},
-			{"nop", nop},
-			{"sub", sub},
-			{"div", divide},
-			{"mul", mul},
-			{"mod", mod}};
+	instruction_t functions[] = {
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"sub", sub},
+		{"div", divide},
+		{"mul", mul},
+		{"mod", mod}};
 	int i;
 
 	if (double_arr_len(input_splitted) == 0)
