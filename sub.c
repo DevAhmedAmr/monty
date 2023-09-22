@@ -26,7 +26,7 @@ void sub(stack_t **stack, unsigned int line_number)
  */
 void sub_error(unsigned int line_number)
 {
-	fprintf(stderr, "L%i: can't add, stack too short\n", line_number);
+	fprintf(stderr, "L%i: can't sub, stack too short\n", line_number);
 
 	if (vars_aircraft.stack != NULL)
 		free_stack_t(vars_aircraft.stack);
