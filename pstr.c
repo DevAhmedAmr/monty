@@ -15,6 +15,7 @@
 void pstr(stack_t **h, unsigned int line_number)
 {
 	const stack_t *curr = *h;
+
 	UNUSED(line_number);
 
 	while (curr != NULL)
