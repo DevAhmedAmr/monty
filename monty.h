@@ -84,6 +84,7 @@ void pchar(stack_t **h, unsigned int line_number);
 void pchar(stack_t **h, unsigned int line_number);
 void pstr(stack_t **h, unsigned int line_number);
 void rotl(stack_t **h, unsigned int line_number);
+void rotr(stack_t **h, unsigned int line_number);
 #define malloc_failur(allocated_var)                   \
 	{                                                  \
 		if (allocated_var == NULL)                     \
