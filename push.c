@@ -2,7 +2,6 @@
 
 int is_integer(char *str);
 void push_usage_err(int line_number);
-void unknown_instruction_err(int line_number, char *optcode);
 void stack_t_malloc_fail(stack_t *node);
 /**
  * push - function that push number to stack arr

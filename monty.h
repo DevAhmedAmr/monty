@@ -60,7 +60,7 @@ typedef struct aircraft_s
 
 aircraft_s vars_aircraft;
 /*extern aircraft_s vars_aircraft;*/
-int unknown_instruction_err(int line_number, char *optcode);
+void unknown_instruction_err(int line_number, char *optcode);
 void push(stack_t **stack, unsigned int line_number);
 int errors_handling(stack_t **stack, unsigned int line_number);
 void pall(stack_t **input, unsigned int line_number);
