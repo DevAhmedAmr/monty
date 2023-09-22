@@ -14,11 +14,12 @@
 
 void rotl(stack_t **h, unsigned int line_number)
 {
-	const stack_t *curr = *h;
-	int tmp = curr->n;
+	int tmp;
 
 	if (!h || !(*h) || !((*h)->next))
 		return;
+
+	tmp = (*h)->n;
 
 	pop(h, line_number);
 	add_stack_t_end(h, tmp);
