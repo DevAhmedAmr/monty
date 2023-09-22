@@ -76,6 +76,7 @@ void swap(stack_t **h, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 #define malloc_failur(allocated_var)                   \
 	{                                                  \
 		if (allocated_var == NULL)                     \
