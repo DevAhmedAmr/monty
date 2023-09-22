@@ -2,7 +2,7 @@
 #include "monty.h"
 int delete_last_node(stack_t **h, int *n);
 /**
- * rotl  - prints the string starting at the top of the stack,
+ * rotr - prints the string starting at the top of the stack,
  *  followed by a new line.
  *
  * @param
@@ -21,9 +21,21 @@ void rotr(stack_t **h, unsigned int line_number)
 
 	if (!h || !(*h) || !((*h)->next))
 		return;
+
 	delete_last_node(h, &tmp);
 	push(h, tmp);
 }
+/**
+ * delete_last_node  - function that delete the last node
+ *
+ *
+ * @param
+ * @h: a node to the head of the linked list
+ * @n: variable to save the value on the node
+ *
+ * Return: 1 of success and 1 on fails
+ *
+ */
 int delete_last_node(stack_t **h, int *n)
 {
 	stack_t *curr = *h;
@@ -32,6 +44,7 @@ int delete_last_node(stack_t **h, int *n)
 	for (; curr; curr = curr->next, i++)
 	{
 		stack_t *tmp = *h;
+
 		if (curr != NULL && (curr->next == NULL))
 		{
 			tmp = curr;
@@ -41,5 +54,5 @@ int delete_last_node(stack_t **h, int *n)
 			return (1);
 		}
 	}
-	return 0;
+	return (0);
 }
