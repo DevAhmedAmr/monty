@@ -17,7 +17,7 @@ void rotl(stack_t **h, unsigned int line_number)
 	const stack_t *curr = *h;
 	int tmp = curr->n;
 
-	if (*h == NULL || h == NULL)
+	if (!h == NULL || !h || !(*h)->next)
 		return;
 
 	pop(h, line_number);

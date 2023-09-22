@@ -10,9 +10,7 @@ void add_error(unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number)
 {
 	if (*stack == NULL || (*stack)->next == NULL)
-	{
 		add_error(line_number);
-	}
 
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number);
