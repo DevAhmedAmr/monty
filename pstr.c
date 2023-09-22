@@ -21,7 +21,8 @@ void pstr(stack_t **h, unsigned int line_number)
 	{
 		if (curr->n <= 0 || curr->n > 127)
 		{
-			return;
+			break;
+			;
 		}
 
 		printf("%c", curr->n);
