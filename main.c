@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 
 	if (vars_aircraft.file == NULL)
 	{
-		fprintf(stdout, "Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		free(vars_aircraft.input);
 		exit(EXIT_FAILURE);
 	}
