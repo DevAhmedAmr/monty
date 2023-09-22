@@ -15,19 +15,17 @@
 void pstr(stack_t **h, unsigned int line_number)
 {
 	const stack_t *curr = *h;
-	size_t n = 0;
-
 	UNUSED(line_number);
 
 	while (curr != NULL)
 	{
-		if (curr->n == 0 || curr->n < 0 || curr->n > 127)
+		if (curr->n <= 0 || curr->n > 127)
 		{
 			return;
 		}
 
 		printf("%c", curr->n);
 		curr = curr->next;
-		n++;
 	}
+	printf("\n");
 }
