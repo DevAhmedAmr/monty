@@ -1,7 +1,12 @@
 #include "monty.h"
 int is_len_bigger_than_2(stack_t *h);
 void swap_error(unsigned int line_number);
-
+/**
+ * swap - function that swaps the top two elements of the stack.
+ * @h: a node to the first element in the linked list (stack_t)
+ * @line_number: line number of the opCode that is being executed
+ *
+ */
 void swap(stack_t **h, unsigned int line_number)
 {
 	int tmp;
@@ -18,7 +23,10 @@ void swap(stack_t **h, unsigned int line_number)
 	curr->n = curr->next->n;
 	curr->next->n = tmp;
 }
-
+/**
+ * swap_error - print a message error if swap fun failed
+ * @line_number: line number of the opCode that is being executed
+ */
 void swap_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%i: can't swap, stack too short\n", line_number);
@@ -32,7 +40,11 @@ void swap_error(unsigned int line_number)
 
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * is_len_bigger_than_2 - function that swaps the top two
+ * @h: a node to the first element in the linked list (stack_t)
+ * Return: return
+ */
 int is_len_bigger_than_2(stack_t *h)
 {
 	int i = 0;

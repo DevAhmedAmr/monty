@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "monty.h"
 /**
- * stack_t - function that prints a element of n of a linked list
+ * print_stack_t - function that prints a element of n of a linked list
  *
  * @param
  * @h: a node to the head of the linked list

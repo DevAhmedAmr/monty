@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * stack_t - function that returns the sum of all
+ * sum_stack_t - function that returns the sum of all
  * the data (n) of a stack_t linked list.
  * @param
  * @head: a node to a linked list

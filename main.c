@@ -3,18 +3,18 @@
 #include <string.h>
 #include "monty.h"
 /**
- * @brief
- * @note
- * @param  argc:
- * @param  **argv:
- * @retval
+ * main - entry for an app that execute monty file input
+ * from a file
+ * @argc: number of cmd args
+ * @argv: cmd args
+ * Return: 0 on success
  */
 
 int main(int argc, char **argv)
 {
 	int line_number = 1;
-	vars_aircraft.stack = NULL;
 
+	vars_aircraft.stack = NULL;
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -37,7 +37,8 @@ int main(int argc, char **argv)
 	{
 		vars_aircraft.input_splitted = string_toList(vars_aircraft.input);
 
-		compare_fun(vars_aircraft.input_splitted, line_number, &(vars_aircraft.stack));
+		compare_fun(vars_aircraft.input_splitted, line_number,
+					&(vars_aircraft.stack));
 		free_grid(vars_aircraft.input_splitted);
 		line_number++;
 	}
@@ -46,7 +47,13 @@ int main(int argc, char **argv)
 	free(vars_aircraft.input);
 	return (0);
 }
-
+/**
+ * compare_fun - function that print execute the commands
+ * @note
+ * @input_splitted: input splitted  as 2d array
+ * @line_number: number of the line
+ * @stack: a node to linked list
+ */
 void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 {
 	instruction_t functions[] = {{"push", push},

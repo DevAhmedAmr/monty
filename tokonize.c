@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * string_toList - function that convert string to array of words
+ * @input: input to be converted to arr
+ * Return: ptr to the new 2d arr of words
+ */
 char **string_toList(char *input)
 {
 	char **input_splitted = malloc(250 * sizeof(char *));
@@ -15,8 +20,7 @@ char **string_toList(char *input)
 	}
 
 	if (input_splitted == NULL)
-		return NULL;
-
+		return (NULL);
 	for (i = 0; tmp != NULL; i++)
 	{
 		int len = strlen(tmp);
@@ -24,12 +28,12 @@ char **string_toList(char *input)
 		input_splitted[i] = malloc(sizeof(char) * (len) + 1);
 
 		if (input_splitted[i] == NULL)
-			return NULL;
+			return (NULL);
 
 		strcpy(input_splitted[i], tmp);
 		tmp = strtok(NULL, "  \n");
 	}
 
 	input_splitted[i] = NULL;
-	return input_splitted;
+	return (input_splitted);
 }

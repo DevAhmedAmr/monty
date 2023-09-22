@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * free_stack_t-  function that frees a stack_t list.
+ * free_stack_t -  function that frees a stack_t list.
  * @head: a pointer to the first node to be deleted
  */
 

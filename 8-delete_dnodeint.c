@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * delete_add_stack_t_at_index - function that deletes the node
+ * delete_node_stack_t_at_index - function that deletes the node
  * at index index of a add_stack_t linked list.
  * @head: pointer to a linked listed to be deleted
  * @index: the index to be deleted

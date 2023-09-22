@@ -1,9 +1,15 @@
 #include "monty.h"
 
 int is_integer(char *str);
-int push_usage_err(int line_number);
-int unknown_instruction_err(int line_number, char *optcode);
+void push_usage_err(int line_number);
+void unknown_instruction_err(int line_number, char *optcode);
 void stack_t_malloc_fail(stack_t *node);
+/**
+ * push - function that push number to stack arr
+ * @stack: a node to the first element in the linked list (stack_t)
+ * @line_number: line number of the opCode that is being executed
+ *
+ */
 void push(stack_t **stack, unsigned int line_number)
 {
 	int is_arr_empty = double_arr_len(vars_aircraft.input_splitted) < 2;
@@ -19,7 +25,11 @@ void push(stack_t **stack, unsigned int line_number)
 
 	stack_t_malloc_fail(add_at_beginning_stack_t(stack, element));
 }
-
+/**
+ * is_integer - function that checks if the str is a number or not
+ * @str: str input to be confirmed
+ * Return: 0 if not an integer , 1  if its
+ */
 int is_integer(char *str)
 {
 	size_t i;
@@ -32,13 +42,19 @@ int is_integer(char *str)
 			continue;
 
 		if ((int)str[i] > 57 || (int)str[i] < 48)
-			return 0;
+			return (0);
 	}
 
-	return 1;
+	return (1);
 }
-
-int unknown_instruction_err(int line_number, char *optcode)
+/**
+ * unknown_instruction_err - function that print err message
+ *
+ * @line_number: line number of the opCode that is being executed
+ * @optcode: input command
+ *
+ */
+void unknown_instruction_err(int line_number, char *optcode)
 {
 	fprintf(stderr, "L%i: unknown instruction %s\n", line_number, optcode);
 
@@ -51,8 +67,12 @@ int unknown_instruction_err(int line_number, char *optcode)
 
 	exit(EXIT_FAILURE);
 }
-
-int push_usage_err(int line_number)
+/**
+ * push_usage_err - function that print usage err message
+ *
+ * @line_number: line number of the opCode that is being executed
+ */
+void push_usage_err(int line_number)
 {
 	fprintf(stderr, "L%i: usage: push integer\n", line_number);
 	if (vars_aircraft.stack != NULL)
@@ -64,7 +84,11 @@ int push_usage_err(int line_number)
 
 	exit(EXIT_FAILURE);
 }
-
+/**
+ * stack_t_malloc_fail - function that print usage err message
+ *
+ * @node: function to check if the malloc failed
+ */
 void stack_t_malloc_fail(stack_t *node)
 {
 	if (node == NULL)

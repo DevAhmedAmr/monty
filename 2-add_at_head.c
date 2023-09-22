@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * add_stack_t - a function that adds a new node
+ * add_at_beginning_stack_t - a function that adds a new node
  * at the beginning of a dlistint_t list..
  *
  * @head: a  pointer to a linked list

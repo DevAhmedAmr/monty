@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "monty.h"
 /**
- * stack_t - function that returns the number of elements
+ * stack_t_len - function that returns the number of elements
  * in a linked dlistint_t list.
  *
  * @param
