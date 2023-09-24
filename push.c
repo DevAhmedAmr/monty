@@ -22,8 +22,38 @@ void push(stack_t **stack, unsigned int line_number)
 	else
 		push_usage_err(line_number);
 
-	stack_t_malloc_fail(add_at_beginning_stack_t(stack, element));
+	if (!vars_aircraft.is_queue)
+
+		stack_t_malloc_fail(add_at_beginning_stack_t(stack, element));
+	else
+		stack_t_malloc_fail(add_stack_t_end(stack, element));
 }
+
+/**
+ * set_queue - function  that sets the format of the data to a queue (FIFO).
+ * @stack: a node to the first element in the linked list (stack_t)
+ * @line_number: line number of the opCode that is being executed
+ */
+void set_queue(stack_t **stack, unsigned int line_number)
+{
+	UNUSED(stack);
+	UNUSED(line_number);
+	vars_aircraft.is_queue = 1;
+}
+
+/**
+ * set_stack - function  that  sets the format of the data to a stack (LIFO).
+ * (This is the default behavior of the program.)
+ * @stack: a node to the first element in the linked list (stack_t)
+ * @line_number: line number of the opCode that is being executed
+ */
+void set_stack(stack_t **stack, unsigned int line_number)
+{
+	UNUSED(stack);
+	UNUSED(line_number);
+	vars_aircraft.is_queue = 0;
+}
+
 /**
  * is_integer - function that checks if the str is a number or not
  * @str: str input to be confirmed

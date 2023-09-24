@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 {
 	int line_number = 1;
 
+	vars_aircraft.is_queue = 0;
 	vars_aircraft.stack = NULL;
 	if (argc != 2)
 	{
@@ -71,13 +72,15 @@ void compare_fun(char **input_splitted, const int line_number, stack_t **stack)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
-		{"rotr", rotr}};
+		{"rotr", rotr},
+		{"queue", set_queue},
+		{"stack", set_stack}};
 	int i;
 
 	if (double_arr_len(input_splitted) == 0 || input_splitted[0][0] == '#')
 		return;
 
-	for (i = 0; i < 15; i++)
+	for (i = 0; i < 17; i++)
 	{
 
 		if (strcmp(functions[i].opcode, input_splitted[0]) == 0)

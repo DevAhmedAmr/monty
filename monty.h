@@ -56,6 +56,7 @@ typedef struct aircraft_s
 	FILE *file;
 	stack_t *stack;
 	int error_number;
+	int is_queue;
 } aircraft_s;
 
 aircraft_s vars_aircraft;
@@ -85,6 +86,8 @@ void pchar(stack_t **h, unsigned int line_number);
 void pstr(stack_t **h, unsigned int line_number);
 void rotl(stack_t **h, unsigned int line_number);
 void rotr(stack_t **h, unsigned int line_number);
+void set_queue(stack_t **stack, unsigned int line_number);
+void set_stack(stack_t **stack, unsigned int line_number);
 #define malloc_failur(allocated_var)                   \
 	{                                                  \
 		if (allocated_var == NULL)                     \
